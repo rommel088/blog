@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="{{ path('home') }}">Home</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Planes <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ path('craft', {'name': '109g10'}) }}">Bf. 109 G-10</a></li>
+                    <li><a href="{{ path('craft', {'name': 'p51h'}) }}">P - 51 H</a></li>
+                    <li><a href="{{ path('craft', {'name': 'temp5'}) }}">Tempest Mk V</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Engines <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ path('engine', {'name': 'DB605DC'}) }}">DB 605DC</a></li>
+                    <li><a href="{{ path('engine', {'name': 'V-1650-9'}) }}">Merlin V-1659-9</a></li>
+                    <li><a href="{{ path('engine', {'name': 'sabre2'}) }}">"Сейбр" II</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

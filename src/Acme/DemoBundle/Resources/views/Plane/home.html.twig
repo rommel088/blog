@@ -1,0 +1,24 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Planes{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript" src="{{ asset('bundles/acmedemo/js/jquery-2.0.3.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('bundles/acmedemo/js/bootstrap.min.js') }}"></script>
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/bootstrap.css') }}" />
+<link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/bootstrap-theme.css') }}" />
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            {% block navigation %}{{ include("AcmeDemoBundle:Plane:_navigation.html.twig") }}{% endblock %}
+        </div>
+    </div>
+    {% block content %}
+
+    {% endblock %}
+{% endblock %}

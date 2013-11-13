@@ -3,6 +3,14 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Second!{% endblock %}</title>
+        {% javascripts '@AcmeDemoBundle/Resources/public/js/*' %}
+            <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/jquery-2.0.3.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/acmedemo/js/bootstrap.min.js') }}"></script>
+        {% endjavascripts %}
+        {% stylesheets '@AcmeDemoBundle/Resources/public/css/*' filter='cssrewrite' %}
+            <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/bootstrap.css') }}" />
+            <link rel="stylesheet" href="{{ asset('bundles/acmedemo/css/bootstrap-theme.css') }}" />
+        {% endstylesheets %}
     </head>
     <body>
         {% block body %}<h1>Second</h1>{% endblock %}

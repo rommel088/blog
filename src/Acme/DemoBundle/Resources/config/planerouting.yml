@@ -1,0 +1,11 @@
+home:
+    path:  /home
+    defaults: { _controller: AcmeDemoBundle:Plane:home }
+
+craft:
+    path:  /craft/{name}
+    defaults: { _controller: AcmeDemoBundle:Plane:craft }
+
+engine:
+    path:  /engine/{name}
+    defaults: { _controller: AcmeDemoBundle:Plane:engine }

@@ -26,6 +26,7 @@ monolog:
 
 assetic:
     use_controller: true
+    bundles: [ AcmeDemoBundle ]
 
 #swiftmailer:
 #    delivery_address: me@example.com
