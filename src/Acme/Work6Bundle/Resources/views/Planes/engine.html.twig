@@ -1,0 +1,16 @@
+{% extends "AcmeWork6Bundle:Default:index.html.twig" %}
+
+{% block body %}
+    {% block menu %}{{ include("AcmeWork6Bundle:Planes:_menu.html.twig") }}{% endblock %}
+    {{ include("AcmeWork6Bundle:Planes:_engine.html.twig", {engine: engine}) }}
+
+
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+            {% for plane in planes %}
+                {{ include("AcmeWork6Bundle:Planes:_plane.html.twig", {plane: plane}) }}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

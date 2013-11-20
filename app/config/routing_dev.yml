@@ -14,13 +14,17 @@ _main:
     resource: routing.yml
 
 # AcmeDemoBundle routes (to be removed)
-_acme_demo:
-    resource: "@AcmeDemoBundle/Resources/config/routing.yml"
-
-_my_routes:
-    resource: "@AcmeDemoBundle/Resources/config/myrouting.yml"
-    prefix:   /my
+#_acme_demo:
+#    resource: "@AcmeDemoBundle/Resources/config/routing.yml"
+#
+#_my_routes:
+#    resource: "@AcmeDemoBundle/Resources/config/myrouting.yml"
+#    prefix:   /my
 
 _planes:
     resource: "@AcmeDemoBundle/Resources/config/planerouting.yml"
     prefix:   /plane
+
+acme_work6:
+    resource: "@AcmeWork6Bundle/Resources/config/routing.yml"
+    prefix:   /

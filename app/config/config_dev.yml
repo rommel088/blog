@@ -24,9 +24,9 @@ monolog:
             type:  chromephp
             level: info
 
-assetic:
-    use_controller: true
-    bundles: [ AcmeDemoBundle ]
+#assetic:
+#    use_controller: true
+#    bundles: [ AcmeWork6Bundle ]
 
 #swiftmailer:
 #    delivery_address: me@example.com

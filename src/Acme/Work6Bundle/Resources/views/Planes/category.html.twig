@@ -1,0 +1,22 @@
+{% extends "AcmeWork6Bundle:Default:index.html.twig" %}
+
+{% block body %}
+    {% block menu %}{{ include("AcmeWork6Bundle:Planes:_menu.html.twig") }}{% endblock %}
+
+    <table class="table" style="margin: 90px auto;">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>About</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in content %}
+                <tr>
+                    <td><a href="/{{ source }}/{{ item.id}}">{{ item.name }}</a></td>
+                    <td>{{ item.description|slice(0, 400) }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
