@@ -1,0 +1,27 @@
+homepage:
+    pattern:  /
+    defaults: { _controller: AcmeWork6Bundle:Main:index }
+
+planes:
+    pattern:  /planes
+    defaults: { _controller: AcmeWork6Bundle:Main:planes }
+
+engines:
+    pattern:  /engines
+    defaults: { _controller: AcmeWork6Bundle:Main:engines }
+
+weapons:
+    pattern:  /weapons
+    defaults: { _controller: AcmeWork6Bundle:Main:weapons }
+
+plane:
+    pattern:  /plane/{id}
+    defaults: { _controller: AcmeWork6Bundle:Main:plane }
+
+engine:
+    pattern:  /engine/{id}
+    defaults: { _controller: AcmeWork6Bundle:Main:engine }
+
+weapon:
+    pattern:  /weapon/{id}
+    defaults: { _controller: AcmeWork6Bundle:Main:weapon }
