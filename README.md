@@ -1,2 +1,2 @@
-Working homework 6
-http://mw4.my/
+Working homework 7
+added 2 services, used doctrine and mailer synfony services
