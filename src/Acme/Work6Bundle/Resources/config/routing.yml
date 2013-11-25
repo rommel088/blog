@@ -25,3 +25,11 @@ engine:
 weapon:
     pattern:  /weapon/{id}
     defaults: { _controller: AcmeWork6Bundle:Main:weapon }
+
+contact:
+    pattern:  /contact
+    defaults: { _controller: AcmeWork6Bundle:Main:contact }
+
+mail:
+    pattern:  /sendmail
+    defaults: { _controller: AcmeWork6Bundle:Main:mail }

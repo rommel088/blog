@@ -1,0 +1,14 @@
+{% extends "AcmeWork6Bundle:Default:index.html.twig" %}
+
+{% block body %}
+    {% block menu %}{{ include("AcmeWork6Bundle:Planes:_menu.html.twig") }}{% endblock %}
+    <div class="container" style="margin-top: 70px;">
+        <form class="form-signin">
+            <h2 class="form-signin-heading">Please input message</h2>
+            <input id="sender-mail" type="text" class="form-control" placeholder="Your email address" required autofocus style="width: 25%;">
+            <input id="sender-name" type="text" class="form-control" placeholder="Name" required style="width: 25%; margin: 10px 0;">
+            <textarea id="sender-message" class="form-control" rows="5" placeholder="Message" required style="width: 40%;"></textarea>
+            <button id="send-mail" type="button" class="btn btn-primary" style="margin: 10px 0;">Send</button>
+        </form>
+    </div>
+{% endblock %}

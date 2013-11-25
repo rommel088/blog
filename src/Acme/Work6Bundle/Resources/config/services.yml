@@ -1,7 +1,11 @@
 parameters:
-#    acme_work6.example.class: Acme\Work6Bundle\Example
+    ViewPlanes.class:      Acme\Work6Bundle\Services\ViewPlanes
+    MyMailer.class:        Acme\Work6Bundle\Services\MyMailer
 
 services:
-#    acme_work6.example:
-#        class: %acme_work6.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    ViewPlanes:
+        class:      "%ViewPlanes.class%"
+        arguments:  ["@doctrine"]
+    MyMailer:
+        class:      "%MyMailer.class%"
+        arguments:  ["@mailer"]
