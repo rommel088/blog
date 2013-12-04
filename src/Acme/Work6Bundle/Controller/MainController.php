@@ -5,6 +5,9 @@ namespace Acme\Work6Bundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Acme\Work6Bundle\Forms;
+use Pagerfanta\Pagerfanta;
+use Pagerfanta\Adapter\ArrayAdapter;
 
 class MainController extends Controller
 {
@@ -97,5 +100,58 @@ class MainController extends Controller
         $myMailer->sendMail();
 
         return new Response("ok");
+    }
+
+    public function guestAction(Request $request)
+    {
+        $viewPlanes = $this->container->get('GuestBook');
+
+        if ($request->get("action") == 'delMessage') {
+            $viewPlanes->delMessages($request->get("idMessage"));
+            return new Response(1);
+        }
+        $messages = $viewPlanes->getAllMessages();
+
+        $guest = new Forms\Guest();
+        $form = $this->createFormBuilder($guest)
+            ->add('name', 'text')
+            ->add('email', 'text')
+            ->add('message', 'textarea')
+            ->add('save', 'submit')
+            ->getForm();
+
+        $form->handleRequest($request);
+        if ($form->isValid()) {
+
+            $viewPlanes->addMessage($form->getData());
+            return $this->redirect($this->generateUrl('guest'));
+
+        }
+
+        $page = $request->get('page');
+
+        $adapter = new ArrayAdapter($messages);
+        $pagerfanta = new Pagerfanta($adapter);
+
+        if( !$page ) {
+            $page = 1;
+        }
+        try {
+            $pagerfanta->setCurrentPage($page);
+        } catch (NotValidCurrentPageException $e) {
+            throw new NotFoundHttpException();
+        }
+
+        $pagerfanta->setMaxPerPage($this->container->getParameter('element_per_page'));
+        $pagerfanta->setCurrentPage($page);
+        $messages = $pagerfanta->getCurrentPageResults();
+
+
+
+        return $this->render('AcmeWork6Bundle:Planes:guest.html.twig', array(
+            'form' => $form->createView(),
+            'messages' => $messages,
+            'pagerfanta' => $pagerfanta,
+        ));
     }
 }

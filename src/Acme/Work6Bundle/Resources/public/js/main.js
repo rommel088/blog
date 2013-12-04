@@ -17,3 +17,21 @@ $(document).ready(function(){
         });
     });
 });
+
+toggleMessage = function(id) {
+    $('.but_' + id).toggle();
+    $('#mes_' + id + ' div').toggle();
+}
+
+delMessage = function(id) {
+    $.ajax({
+            url: document.URL,
+            method: "POST",
+            data: ({action :"delMessage",
+                    idMessage     :id}),
+            success: function(msg){
+                location.reload();
+            }
+        }
+    )
+}

@@ -5,10 +5,19 @@
 
     <parameters>
         <parameter key="ViewPlanes.class">Acme\Work6Bundle\Services\ViewPlanes</parameter>
+        <parameter key="MyMailer.class">Acme\Work6Bundle\Services\MyMailer</parameter>
+        <parameter key="GuestBook.class">Acme\Work6Bundle\Services\GuestBook</parameter>
     </parameters>
 
     <services>
         <service id="ViewPlanes" class="%ViewPlanes.class%">
+            <argument type="service" id="doctrine" />
+        </service>
+        <service id="GuestBook" class="%GuestBook.class%">
+            <argument type="service" id="doctrine" />
+        </service>
+        <service id="MyMailer" class="%MyMailer.class%">
+            <argument type="service" id="mailer" />
         </service>
     </services>
 </container>

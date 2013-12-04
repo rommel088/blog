@@ -33,3 +33,7 @@ contact:
 mail:
     pattern:  /sendmail
     defaults: { _controller: AcmeWork6Bundle:Main:mail }
+
+guest:
+    pattern:  /guest
+    defaults: { _controller: AcmeWork6Bundle:Main:guest }

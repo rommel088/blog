@@ -64,7 +64,7 @@ class Plane
     private $weapons;
 
     public function __construct() {
-        $this->$weapons = new ArrayCollection();
+//        $this->$weapons = new ArrayCollection();
         $this->engine_id = new ArrayCollection();
     }
 
