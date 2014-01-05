@@ -30,3 +30,8 @@ monolog:
 
 #swiftmailer:
 #    delivery_address: me@example.com
+
+stof_doctrine_extensions:
+    orm:
+        default:
+            timestampable: true

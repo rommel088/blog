@@ -23,7 +23,8 @@
         "twitter/bootstrap": "3.0.0",
         "components/jquery": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
-        "white-october/pagerfanta-bundle": "dev-master"
+        "white-october/pagerfanta-bundle": "dev-master",
+        "stof/doctrine-extensions-bundle": "~1.1@dev"
     },
     "scripts": {
         "post-install-cmd": [

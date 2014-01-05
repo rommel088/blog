@@ -25,6 +25,10 @@ _planes:
     resource: "@AcmeDemoBundle/Resources/config/planerouting.yml"
     prefix:   /plane
 
-acme_work6:
-    resource: "@AcmeWork6Bundle/Resources/config/routing.yml"
+#acme_work6:
+#    resource: "@AcmeWork6Bundle/Resources/config/routing.yml"
+#    prefix:   /
+
+blog:
+    resource: "@BlogBundle/Resources/config/routing.yml"
     prefix:   /

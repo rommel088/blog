@@ -1,6 +1,6 @@
 <?php
 
-namespace Acme\Work6Bundle\Controller;
+namespace Blog\BlogBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,6 +14,8 @@ class MainController extends Controller
 {
     public function indexAction()
     {
+        echo "112312412414124";
+        exit;
         $viewPlanes = $this->container->get('ViewPlanes');
 
         $planes = $viewPlanes->getAllPlanes();
