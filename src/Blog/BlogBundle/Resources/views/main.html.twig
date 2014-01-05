@@ -1,0 +1,13 @@
+{% extends "BlogBundle:Default:index.html.twig" %}
+
+{% block body %}
+    {% block menu %}{{ include("BlogBundle::_menu.html.twig") }}{% endblock %}
+    <div id="main-container" class="container">
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+        <div id="sidebar">
+            {% block sidebar %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "BlogBundle::main.html.twig" %}
+
+{% block content %}
+    {% if articles > 0 %}
+        {% for article in articles %}
+            {{ include("BlogBundle::_article.html.twig", {article: article}) }}
+        {% endfor %}
+
+    {% else %}
+        Artickes not found
+    {% endif %}
+{% endblock %}
+
+{% block sidebar %}
+    {{ sidebar|raw }}
+{% endblock %}

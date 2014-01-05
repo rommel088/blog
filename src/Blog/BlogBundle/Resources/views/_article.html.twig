@@ -1,0 +1,8 @@
+<div class="prev-article-container">
+    <div class="prev-article-title"><a href="{{ path('article', {'id': article.id}) }}">{{ article.title }}</a></div>
+    <div class="prev-article-date">Published: {{ article.created }}</div>
+    <div class="prev-article-body">
+        <img src="{{ asset('bundles/blog/images/' ) }}{{ article.image }}" class="img-thumbnail">
+        {{ article.body|slice(0, 400) }}...
+    </div>
+</div>

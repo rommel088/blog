@@ -30,7 +30,7 @@ twig:
 assetic:
     debug:          %kernel.debug%
     use_controller: false
-    bundles:        [AcmeWork6Bundle]
+    bundles:        [AcmeWork6Bundle,BlogBundle]
     java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -99,3 +99,8 @@ swiftmailer:
     host:       smtp.gmail.com
     username:   mywarplanes
     password:   desertfox
+
+white_october_pagerfanta:
+    exceptions_strategy:
+        out_of_range_page:        to_http_not_found
+        not_valid_current_page:   to_http_not_found

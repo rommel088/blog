@@ -1,0 +1,20 @@
+{% extends "BlogBundle::main.html.twig" %}
+
+{% block content %}
+    {% if article > 0 %}
+        <div class="article-container">
+            <div class="article-title">{{ article.0.title }}</div>
+            <div class="article-date">Published: {{ article.0.created }}</div>
+            <div class="article-body">
+                <img src="{{ asset('bundles/blog/images/' ) }}{{ article.0.image }}" class="img-thumbnail">
+                {{ article.0.body }}...
+            </div>
+        </div>
+    {% else %}
+        Artickes not found
+    {% endif %}
+{% endblock %}
+
+{% block sidebar %}
+    {{ sidebar|raw }}
+{% endblock %}
