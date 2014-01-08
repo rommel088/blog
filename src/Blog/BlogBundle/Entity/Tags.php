@@ -24,6 +24,7 @@ class Tags
     private $tag;
     /**
      * @ORM\ManyToMany(targetEntity="Articles", mappedBy="tags")
+     * @ORM\JoinTable(name="articles_tags")
      **/
     private $article;
 

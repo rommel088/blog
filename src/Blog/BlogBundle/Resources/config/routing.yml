@@ -13,3 +13,7 @@ guestbook:
 article:
     pattern:  /article/{id}
     defaults: { _controller: BlogBundle:Main:article }
+
+more_articles:
+    pattern: /morearticles
+    defaults: { _controller: BlogBundle:Main:moreArticle }

@@ -1,4 +1,8 @@
-acme_work6:
-    resource: "@AcmeWork6Bundle/Resources/config/routing.yml"
+#acme_work6:
+#    resource: "@AcmeWork6Bundle/Resources/config/routing.yml"
+#    prefix:   /
+
+Blog:
+    resource: "@BlogBundle/Resources/config/routing.yml"
     prefix:   /
 

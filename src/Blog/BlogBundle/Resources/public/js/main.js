@@ -35,3 +35,16 @@ delMessage = function(id) {
         }
     )
 }
+count = 0;
+showMoreArticles = function() {
+    count++;
+    $.ajax({
+        type: "POST",
+        url: "/morearticles",
+        dataType: "html",
+        data: ({count : count, page : $('.pagerfanta .current').text()}),
+        success: function(msg){
+            $('.prev-article-container:last').append(msg);
+        }
+    });
+}

@@ -2,10 +2,17 @@
 
 {% block content %}
     {% if articles > 0 %}
+        <div class="container">
+            <div class="pagerfanta">{{ pagerfanta(pagerfanta, 'default') }}</div>
+        </div>
         {% for article in articles %}
             {{ include("BlogBundle::_article.html.twig", {article: article}) }}
         {% endfor %}
-
+        <div id="more-container">
+            <div class="navbar navbar-inverse" onclick="showMoreArticles();">
+                <h2>Show more</h2>
+            </div>
+        </div>
     {% else %}
         Artickes not found
     {% endif %}
@@ -13,4 +20,11 @@
 
 {% block sidebar %}
     {{ sidebar|raw }}
+{% endblock %}
+
+{% block footer %}
+    <div id="footer" class="container">
+        <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+        </div>
+    </div>
 {% endblock %}

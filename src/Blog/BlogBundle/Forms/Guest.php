@@ -1,6 +1,6 @@
 <?php
 
-namespace Acme\Work6Bundle\Forms;
+namespace Blog\BlogBundle\Forms;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -24,7 +24,7 @@ class Guest
 
     /**
      * @Assert\Length(
-     *      min = "100"
+     *      min = "10"
      * )
      */
     protected $message;

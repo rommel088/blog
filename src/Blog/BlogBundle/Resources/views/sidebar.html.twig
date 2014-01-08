@@ -13,6 +13,10 @@
 <h4>Last posts from guestbook</h4>
 <ul>
     {% for article in posts %}
-        <li><a href="#">{{ article.title|slice(0, 35) }}...</a></li>
+        <li><a href="{{ path('guestbook') }}">{{ article.title|slice(0, 35) }}...</a></li>
     {% endfor %}
+</ul>
+<h4>Tag cloud</h4>
+<ul>
+    {{ cloud|raw }}
 </ul>
