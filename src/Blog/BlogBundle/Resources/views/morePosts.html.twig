@@ -1,0 +1,18 @@
+{% for message in posts %}
+    <div class="message-container">
+        <div class="message-header">
+            <div class="col-md-10">{{ message.name }}</div>
+            <div class="col-md-2">
+                {% if message.message|length > 100 %}
+                    <button type="button" class="btn btn-search btn-xs but_{{ message.id }}" onclick="toggleMessage({{ message.id }})">Развернуть</button>
+                    <button type="button" class="btn btn-search btn-xs but_{{ message.id }}" onclick="toggleMessage({{ message.id }})" style="display: none;">Свернуть</button>
+                    {#<button type="button" class="btn btn-danger btn-xs" onclick="delMessage({{ message.id }})">Удалить</button>#}
+                {% endif %}
+            </div>
+        </div>
+        <div class="message-body" id="mes_{{ message.id }}">
+            <div>{{ message.message|slice(0, 100) }}{% if message.message|length > 100 %}...{% endif %}</div>
+            <div style="display: none;">{{ message.message }}</div>
+        </div>
+    </div>
+{% endfor %}

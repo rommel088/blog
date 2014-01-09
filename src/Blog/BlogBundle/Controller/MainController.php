@@ -240,4 +240,32 @@ class MainController extends Controller
             'pagerfanta' => $pagerfanta,
         ));
     }
+
+    public function morePostsAction(Request $request)
+    {
+        $offset = $this->container->getParameter('posts_per_page') * $request->get('page') * $request->get('count');
+
+        $em = $this->getDoctrine()->getManager();
+        $query =$em->createQuery('
+                SELECT content
+                FROM BlogBundle:GuestPosts content
+                ORDER BY content.created DESC'
+        )->setFirstResult($offset)->setMaxResults($this->container->getParameter('posts_per_page'));
+        $posts = $query->getResult();
+        $result = "";
+        foreach($posts as $key=>$value){
+            $result[$key]['id'] = $value->getId();
+            $result[$key]['name'] = $value->getName();
+            $result[$key]['email'] = $value->getEmail();
+            $result[$key]['message'] = $value->getMessage();
+            $result[$key]['created'] = $value->getCreated()->format('Y-m-d H:i:s');
+        }
+
+        return $this->render('BlogBundle::morePosts.html.twig', array('posts' => $result));
+    }
+
+    public function aboutMeAction()
+    {
+        return $this->render('BlogBundle::aboutMe.html.twig', array('sidebar' => $this->sidebarDataAction()->getContent()));
+    }
 }

@@ -44,7 +44,21 @@ showMoreArticles = function() {
         dataType: "html",
         data: ({count : count, page : $('.pagerfanta .current').text()}),
         success: function(msg){
-            $('.prev-article-container:last').append(msg);
+            $('.prev-article-container:last').after(msg);
+        }
+    });
+}
+
+countPosts = 0;
+showMorePosts = function() {
+    countPosts++;
+    $.ajax({
+        type: "POST",
+        url: "/moreposts",
+        dataType: "html",
+        data: ({count : countPosts, page : $('.pagerfanta .current').text()}),
+        success: function(msg){
+            $('.message-container:last').after(msg);
         }
     });
 }

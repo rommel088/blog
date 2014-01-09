@@ -4,7 +4,7 @@ homepage:
 
 about:
     pattern:  /about
-    defaults: { _controller: BlogBundle:Main:about }
+    defaults: { _controller: BlogBundle:Main:aboutMe }
 
 guestbook:
     pattern:  /guestbook
@@ -17,3 +17,7 @@ article:
 more_articles:
     pattern: /morearticles
     defaults: { _controller: BlogBundle:Main:moreArticle }
+
+more_posts:
+    pattern: /moreposts
+    defaults: { _controller: BlogBundle:Main:morePosts }
