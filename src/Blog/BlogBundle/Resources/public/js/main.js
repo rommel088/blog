@@ -21,7 +21,7 @@ $(document).ready(function(){
 toggleMessage = function(id) {
     $('.but_' + id).toggle();
     $('#mes_' + id + ' div').toggle();
-}
+};
 
 delMessage = function(id) {
     $.ajax({
@@ -34,20 +34,21 @@ delMessage = function(id) {
             }
         }
     )
-}
+};
 count = 0;
-showMoreArticles = function() {
+showMoreArticles = function(url) {
     count++;
+//    alert(url + "/" + window.location.search);
     $.ajax({
         type: "POST",
-        url: "/morearticles",
+        url: url + window.location.search,
         dataType: "html",
         data: ({count : count, page : $('.pagerfanta .current').text()}),
         success: function(msg){
-            $('.prev-article-container:last').after(msg);
+            $('#more-container').replaceWith(msg);
         }
     });
-}
+};
 
 countPosts = 0;
 showMorePosts = function() {
@@ -58,7 +59,11 @@ showMorePosts = function() {
         dataType: "html",
         data: ({count : countPosts, page : $('.pagerfanta .current').text()}),
         success: function(msg){
-            $('.message-container:last').after(msg);
+            $('#more-container').replaceWith(msg);
         }
     });
-}
+};
+
+inlineSearch = function(tre) {
+    document.location.replace("http://localhost/?type=intext&query=" + $('#search-input').val());
+};

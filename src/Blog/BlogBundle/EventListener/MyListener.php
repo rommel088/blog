@@ -12,7 +12,7 @@ class MyListener
         $this->doctrine = $doctrine;
     }
 
-    public function onMove($event)
+    public function onView($event)
     {
         $id = $event->getRequest()->get('id');
 

@@ -60,13 +60,22 @@
 }
 
 .prev-article-title, .article-title {
-    float: left;
+    /*float: left;*/
     font-size: 30px;
     font-weight: bold;
 }
 
 .prev-article-date, .article-date {
+    float: left;
+    margin: 5px;
+}
+
+.prev-article-tags, .article-tags {
     float: right;
+    margin: 5px;
+}
+
+.prev-article-tags a, .article-tags a {
     margin: 0 5px;
 }
 

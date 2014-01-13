@@ -13,3 +13,7 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    articles_per_page: 4
+    posts_per_page: 5
+    items_in_sidebar: 5

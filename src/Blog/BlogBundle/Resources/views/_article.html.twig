@@ -1,8 +1,17 @@
 <div class="prev-article-container">
     <div class="prev-article-title"><a href="{{ path('article', {'id': article.id}) }}">{{ article.title }}</a></div>
     <div class="prev-article-date">Published: {{ article.created }}</div>
+    <div class="prev-article-tags">
+        {% for tag in article.tags %}
+            <a href="{{ path('homepage') }}?type=tag&query={{ tag.tag }}">
+                <span class="label btn-search">
+                    #{{ tag.tag }}
+                </span>
+            </a>
+        {% endfor %}
+    </div>
     <div class="prev-article-body">
         <img src="{{ asset('bundles/blog/images/' ) }}{{ article.image }}" class="img-thumbnail">
-        {{ article.body|slice(0, 400) }}...
+        {{ article.body|slice(0, 400)|raw }}...
     </div>
 </div>

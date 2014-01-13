@@ -16,12 +16,12 @@
                         <li><a href="{{ path('about') }}">About me</a></li>
                         <li><a href="{{ path('guestbook') }}">Guestbook</a></li>
                     </ul>
-                    <form class="navbar-form navbar-right" role="search">
+                    <div class="navbar-form navbar-right">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
+                            <input id="search-input" type="text" class="form-control" placeholder="Search">
                         </div>
-                        <button type="submit" class="btn btn-search">Submit</button>
-                    </form>
+                        <button class="btn btn-search" onclick="inlineSearch('{{ path('homepage') }}')">Submit</button>
+                    </div>
                 </div>
             </div>
         </div>

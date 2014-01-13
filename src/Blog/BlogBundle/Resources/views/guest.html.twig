@@ -42,11 +42,13 @@
                     </div>
                 </div>
             {% endfor %}
-            <div id="more-container">
-                <div class="navbar navbar-inverse" onclick="showMorePosts();">
-                    <h2>Show more</h2>
+            {% if hasMore %}
+                <div id="more-container">
+                    <div class="navbar navbar-inverse" onclick="showMorePosts();">
+                        <h2>Show more</h2>
+                    </div>
                 </div>
-            </div>
+            {% endif %}
         </div>
     </div>
     {% block footer %}

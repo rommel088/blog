@@ -3,32 +3,13 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
-    <!--<parameters>-->
-        <!--<parameter key="ViewPlanes.class">Acme\Work6Bundle\Services\ViewPlanes</parameter>-->
-        <!--<parameter key="MyMailer.class">Acme\Work6Bundle\Services\MyMailer</parameter>-->
-        <!--<parameter key="GuestBook.class">Acme\Work6Bundle\Services\GuestBook</parameter>-->
-    <!--</parameters>-->
 
     <services>
-        <!--<service id="ViewPlanes" class="%ViewPlanes.class%">-->
-            <!--<argument type="service" id="doctrine" />-->
-        <!--</service>-->
-
-        <!--<service id="GuestBook" class="%GuestBook.class%">-->
-            <!--<argument type="service" id="doctrine" />-->
-        <!--</service>-->
-
-        <!--<service id="MyMailer" class="%MyMailer.class%">-->
-            <!--<argument type="service" id="mailer" />-->
-        <!--</service>-->
 
         <service id="MyListener" class="Blog\BlogBundle\EventListener\MyListener">
-            <tag name="kernel.event_listener" event="kernel.controller" method="onMove" />
+            <tag name="kernel.event_listener" event="kernel.controller" method="onView" />
             <argument type="service" id="doctrine" />
         </service>
 
-        <!--<service id="MyNewListener" class="Blog\BlogBundle\EventListener\MeNewListener">-->
-            <!--<tag name="kernel.event_listener" event="kernel.controller" method="onMoveNew" />-->
-        <!--</service>-->
     </services>
 </container>

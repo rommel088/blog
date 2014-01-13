@@ -8,11 +8,13 @@
         {% for article in articles %}
             {{ include("BlogBundle::_article.html.twig", {article: article}) }}
         {% endfor %}
-        <div id="more-container">
-            <div class="navbar navbar-inverse" onclick="showMoreArticles();">
-                <h2>Show more</h2>
+        {% if hasMore %}
+            <div id="more-container">
+                <div class="navbar navbar-inverse" onclick="showMoreArticles('{{ path('more_articles') }}');">
+                    <h2>Show more</h2>
+                </div>
             </div>
-        </div>
+        {% endif %}
     {% else %}
         Artickes not found
     {% endif %}

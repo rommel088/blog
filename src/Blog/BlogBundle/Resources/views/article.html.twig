@@ -3,11 +3,20 @@
 {% block content %}
     {% if article > 0 %}
         <div class="article-container">
-            <div class="article-title">{{ article.0.title }}</div>
-            <div class="article-date">Published: {{ article.0.created }}</div>
+            <div class="article-title">{{ article.title }}</div>
+            <div class="article-date">Published: {{ article.created }}</div>
+            <div class="article-tags">
+                {% for tag in article.tags %}
+                    <a href="{{ path('homepage') }}?type=tag&query={{ tag.tag }}">
+                <span class="label btn-search">
+                    #{{ tag.tag }}
+                </span>
+                    </a>
+                {% endfor %}
+            </div>
             <div class="article-body">
-                <img src="{{ asset('bundles/blog/images/' ) }}{{ article.0.image }}" class="img-thumbnail">
-                {{ article.0.body }}
+                <img src="{{ asset('bundles/blog/images/' ) }}{{ article.image }}" class="img-thumbnail">
+                {{ article.body }}
             </div>
         </div>
     {% else %}
