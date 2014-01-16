@@ -21,3 +21,11 @@ more_articles:
 more_posts:
     pattern: /moreposts
     defaults: { _controller: BlogBundle:Main:morePosts }
+
+add_article:
+    pattern: /admin/addarticle
+    defaults: { _controller: BlogBundle:Backend:addArticle }
+
+del_post:
+    pattern: /admin/delpost
+    defaults: { _controller: BlogBundle:Backend:delPost }

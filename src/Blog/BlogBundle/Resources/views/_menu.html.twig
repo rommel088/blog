@@ -1,5 +1,15 @@
 <div id="header-container" class="navbar-wrapper">
     <div id="header-menu" class="container">
+        <div id="enter-container">
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                <a href="{{ path('fos_user_security_logout') }}">
+                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a>
+            {% else %}
+                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            {% endif %}
+        </div>
         <div class="navbar navbar-inverse navbar-static-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -15,6 +25,9 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{{ path('about') }}">About me</a></li>
                         <li><a href="{{ path('guestbook') }}">Guestbook</a></li>
+                        {% if is_granted("ROLE_ADMIN") %}
+                            <li><a href="{{ path('add_article') }}">Add post</a></li>
+                        {% endif %}
                     </ul>
                     <div class="navbar-form navbar-right">
                         <div class="form-group">

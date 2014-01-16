@@ -23,12 +23,11 @@ toggleMessage = function(id) {
     $('#mes_' + id + ' div').toggle();
 };
 
-delMessage = function(id) {
+delMessage = function(id , url) {
     $.ajax({
-            url: document.URL,
+            url: url,
             method: "POST",
-            data: ({action :"delMessage",
-                    idMessage     :id}),
+            data: ({idMessage : id}),
             success: function(msg){
                 location.reload();
             }

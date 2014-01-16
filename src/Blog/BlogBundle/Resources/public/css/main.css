@@ -286,3 +286,13 @@ textarea {
     border-color: #066f82;
     color: #d16803;
 }
+
+#enter-container {
+    position: absolute;
+    right: 100px;
+    top: 10px;
+}
+
+#enter-container a {
+    color: #06859D;
+}

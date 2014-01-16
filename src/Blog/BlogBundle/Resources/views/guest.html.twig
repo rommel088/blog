@@ -32,7 +32,9 @@
                             {% if message.message|length > 100 %}
                                 <button type="button" class="btn btn-search btn-xs but_{{ message.id }}" onclick="toggleMessage({{ message.id }})">Развернуть</button>
                                 <button type="button" class="btn btn-search btn-xs but_{{ message.id }}" onclick="toggleMessage({{ message.id }})" style="display: none;">Свернуть</button>
-                                {#<button type="button" class="btn btn-danger btn-xs" onclick="delMessage({{ message.id }})">Удалить</button>#}
+                                {% if is_granted("ROLE_ADMIN") %}
+                                    <button type="button" class="btn btn-danger btn-xs" onclick="delMessage({{ message.id }}, '{{ path('del_post') }}')">Удалить</button>
+                                {% endif %}
                             {% endif %}
                         </div>
                     </div>

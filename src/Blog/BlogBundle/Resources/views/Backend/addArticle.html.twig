@@ -1,0 +1,33 @@
+{% extends "BlogBundle:Default:index.html.twig" %}
+
+{% block body %}
+    {% block menu %}
+        {{ include("BlogBundle::_menu.html.twig") }}
+    {% endblock %}
+
+    <div id="main-container" class="container">
+        <div class="container">
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="col-md-4 form-left">
+                    {{ form_widget(form.title, {'attr': {'novalidate': 'novalidate' , 'class' : 'form-control', 'placeholder' : 'Title'}}) }}
+                    {{ form_errors(form.title) }}
+                    {{ form_widget(form.image, {'attr': {'novalidate': 'novalidate' , 'class' : 'form-control', 'placeholder' : 'Image'}}) }}
+                    {{ form_errors(form.image) }}
+                    {{ form_widget(form.save, {'attr': {'novalidate': 'novalidate' , 'class' : 'btn btn-search btn-lg btn-block'}}) }}
+                </div>
+                <div class="col-md-8 form-right">
+                    {{ form_widget(form.body, {'attr': {'rows':'6' , 'novalidate': 'novalidate' , 'class' : 'form-control' , 'resize' : 'none', 'placeholder' : 'Article'}}) }}
+                    {{ form_errors(form.body) }}
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+
+    {% block footer %}
+        <div id="footer" class="container">
+            <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+            </div>
+        </div>
+    {% endblock %}
+{% endblock %}
