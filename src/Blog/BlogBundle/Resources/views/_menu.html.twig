@@ -7,7 +7,27 @@
                     {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
                 </a>
             {% else %}
-                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                {#<a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>#}
+                <form id="login-form" class="form-horizontal" action="/login_check" method="post">
+                    <div class="form-group">
+                        {#<input type="hidden" name="_csrf_token" value="5cc09f3929d2265b5ef9e7b84aef0a7c303fd13b">#}
+
+                        <label for="username">Username:</label>
+                        <input class="form-control input-sm" type="text" id="username" name="_username" value="" required="required">
+                    </div>
+                    <div class="form-group">
+
+                        <label for="password">Password:</label>
+                        <input class="form-control input-sm" type="password" id="password" name="_password" required="required">
+                    </div>
+                    <div class="form-group" style="float: left;">
+                        <input type="checkbox" id="remember_me" name="_remember_me" value="on">
+                        <label for="remember_me">Remember me</label>
+                    </div>
+                    <div class="form-group" style="float: right;">
+                        <input class="btn btn-primary btn-xs" type="submit" id="_submit" name="_submit" value="Login">
+                    </div>
+                </form>
             {% endif %}
         </div>
         <div class="navbar navbar-inverse navbar-static-top" role="navigation">
