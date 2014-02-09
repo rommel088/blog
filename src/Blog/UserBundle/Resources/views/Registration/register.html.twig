@@ -1,0 +1,14 @@
+{% extends "BlogBundle:Default:index.html.twig" %}
+
+{% block body %}
+    {% block menu %}{{ include("BlogBundle::_menu.html.twig") }}{% endblock %}
+    {% block fos_user_content %}
+        {% include "FOSUserBundle:Registration:register_content.html.twig" %}
+    {% endblock fos_user_content %}
+    {% block footer %}
+        <div id="footer" class="container">
+            <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+            </div>
+        </div>
+    {% endblock %}
+{% endblock %}
